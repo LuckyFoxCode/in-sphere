@@ -1,0 +1,16 @@
+@import '@fontsource/montserrat';
+@import '@fontsource/rubik';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-rubik;
+  }
+}

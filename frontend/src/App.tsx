@@ -1,1 +1,1 @@
-export const App = () => <h1>In Sphere</h1>
+export const App = () => <h1>In Sphere</h1>;

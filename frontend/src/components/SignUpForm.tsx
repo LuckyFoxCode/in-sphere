@@ -11,14 +11,15 @@ import { Button, FormField, Input } from './ui';
 
 export const SignUpForm = () => {
   const id = useId();
+
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, touchedFields },
   } = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
-    mode: 'onSubmit',
+    mode: 'onBlur',
   });
 
   const onSubmit = (data: SignUpSchema) => {
@@ -48,6 +49,7 @@ export const SignUpForm = () => {
             {...register('firstName')}
             className={cn('bg-gray-600')}
             error={errors.firstName?.message}
+            isValid={!errors.firstName && touchedFields.firstName}
           />
         </FormField>
         <FormField
@@ -59,6 +61,7 @@ export const SignUpForm = () => {
             {...register('lastName')}
             className='bg-gray-600'
             error={errors.lastName?.message}
+            isValid={!errors.lastName && touchedFields.lastName}
           />
         </FormField>
       </div>
@@ -71,6 +74,7 @@ export const SignUpForm = () => {
           {...register('email')}
           className='bg-gray-600'
           error={errors.email?.message}
+          isValid={!errors.email && touchedFields.email}
         />
       </FormField>
       <FormField
@@ -82,6 +86,7 @@ export const SignUpForm = () => {
           {...register('password')}
           className='bg-gray-600'
           error={errors.password?.message}
+          isValid={!errors.password && touchedFields.password}
         />
       </FormField>
 

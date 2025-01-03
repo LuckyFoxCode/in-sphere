@@ -1,0 +1,7 @@
+{
+	"dependencies": {
+		"@hookform/resolvers": "^3.9.1",
+		"tailwind-variants": "^0.3.0",
+		"zod": "^3.24.1"
+	}
+}

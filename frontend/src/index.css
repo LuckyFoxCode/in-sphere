@@ -14,3 +14,9 @@
     @apply font-rubik;
   }
 }
+
+@layer components {
+  .animate {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
